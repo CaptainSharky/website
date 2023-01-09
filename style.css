@@ -16,14 +16,14 @@ body {
     display: grid;
     background: var(--bg-color);
 }
-h1 {
+.typewritten {
     font-family: "VT323", monospace;
     font-size: clamp(1rem, 3vw + 1rem, 4rem);
     position: relative;
 }
 
-h1::before,
-h1::after {
+.typewritten::before,
+.typewritten::after {
     content: "";
     position: absolute;
     top: 0;
@@ -31,13 +31,13 @@ h1::after {
     bottom: 0;
     left: 0;
 }
-h1::before {
+.typewritten::before {
     background: var(--bg-color);
     animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChars))
         forwards;
 }
 
-h1::after {
+.typewritten::after {
     width: 0.125em;
     background: black;
     animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChars))
