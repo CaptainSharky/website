@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+
+:root {
+    --bg-color: hsl(49 37% 94%);
+    --typewriterSpeed: 4s;
+    --typewriterChars: 14;
+}
+
+body {
+    margin: 0;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    place-content: center;
+    text-align: center;
+    min-height: 100vh;
+    display: grid;
+    background: var(--bg-color);
+}
+h1 {
+    font-family: "VT323", monospace;
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    position: relative;
+}
+
+h1::before,
+h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+h1::before {
+    background: var(--bg-color);
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChars))
+        forwards;
+}
+
+h1::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChars))
+            forwards,
+        blink 950ms steps(var(--typewriterChars)) infinite;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeinUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.subtitle {
+    color: black;
+    font-size: 2rem;
+    font-weight: 400;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeinUp 3s ease calc(var(--typewriterSpeed) + 1s) forwards;
+}
