@@ -2,11 +2,11 @@
 
 :root {
     --bg-color: hsl(49 37% 94%);
-    --typewriterSpeed: 4s;
+    --typewriterSpeed: 3.5s;
     --typewriterChars: 14;
 }
 
-body {
+#page1 {
     margin: 0;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
         "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
@@ -42,7 +42,7 @@ body {
     background: black;
     animation: typewriter var(--typewriterSpeed) steps(var(--typewriterChars))
             forwards,
-        blink 950ms steps(var(--typewriterChars)) infinite;
+        blink 900ms steps(var(--typewriterChars)) infinite;
 }
 
 @keyframes typewriter {
